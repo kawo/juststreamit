@@ -1,2 +1,3 @@
-# juststreamit
+# JustStreamIt
+
 OpenClassrooms Project 6
