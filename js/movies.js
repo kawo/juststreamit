@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         img.style = 'vertical-align:middle';
                         img.src = movie.image_url;
                         let modal_button = createNode('button');
-                        modal_button.className = 'best_movie_desc';
+                        modal_button.className = 'best_movie_button';
                         modal_button.innerHTML = 'Détails';
                         createModal(movie);
                         modal_button.onclick = function() {
