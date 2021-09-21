@@ -3,35 +3,72 @@ html {
     padding: 0 20px 20px 20px;
     color: white;
     margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header {
     text-align: center;
-    padding-bottom: 20px;
-}
-
-.best_movie {
-    text-align: center;
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
     width: 100%;
-    transition: .5s ease;
-    opacity: 0;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
+    padding-bottom: 40px;
 }
 
-.best_movie:hover .overlay {
-    opacity: 1;
+h1.modal_content {
+    font-size: 18px;
+}
+
+h2.modal_content {
+    font-size: 16px;
+}
+
+p.modal_content {
+    font-size: 14px;
+}
+
+.container_best_movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.best_movie_desc {
+    width: 25%;
+}
+
+.best_movie_img {
+    width: 25%;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    width: 90%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal_content {
+    width: 100%;
+    cursor: zoom-out;
+}
+
+.close {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: zoom-out;
+}
+
+button.best_movie_desc:hover {
+    text-decoration: none;
+    cursor: zoom-in;
 }
 
 .top_rated {
