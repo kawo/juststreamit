@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createModal(movie) {
         const modal_content = document.getElementById('modal_content');
 
+        let modal_img = movie.image_url;
         let modal_close = createNode('span');
         modal_close.className = 'close';
         modal_close.innerHTML = '&times;';
@@ -140,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bmImg = document.getElementById('bm_img');
         const bmDesc = document.getElementById('bm_desc');
         const modal = document.getElementById('modal');
+        const modal_content = document.getElementById('modal_content');
 
         fetch(url_best_movie)
             .then((response) => response.json())
