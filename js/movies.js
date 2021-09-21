@@ -38,8 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createModal(movie) {
         const modal_content = document.getElementById('modal_content');
+        const modal_cover = document.getElementById('modal_cover');
 
-        let modal_img = movie.image_url;
+        let modal_img = createNode('img');
+        modal_img.src = movie.image_url;
         let modal_close = createNode('span');
         modal_close.className = 'close';
         modal_close.innerHTML = '&times;';
@@ -107,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal_resume.className = 'modal_content';
         modal_resume.innerHTML = movie.long_description;
 
+        append(modal_cover, modal_img);
         append(modal_content, modal_close);
         append(modal_content, modal_title);
         append(modal_content, modal_genre_title);

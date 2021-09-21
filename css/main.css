@@ -22,6 +22,7 @@
     
     p.modal_content {
         font-size: 14px;
+        color: rgb(165, 165, 165);
     }
     
     .container_best_movie {
@@ -48,12 +49,17 @@
         width: 50%;
         transform: translate(-50%, -50%);
         background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.9);
     }
     
     .modal_content {
         width: 100%;
         cursor: zoom-out;
+    }
+    
+    .modal_cover {
+        position: relative;
+        float: right;
     }
     
     .close {
