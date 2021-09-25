@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return url;
     }
 
-    async function fetchUrl(url) {
-        var movie = await fetch(url)
+    function fetchUrl(url) {
+        var movie = fetch(url)
             .then((response) => response.json())
             .then(data => {
                 return data;
@@ -38,10 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    async function fetchBestMovie() {
+    function fetchBestMovie() {
         var url_best_movie = "http://localhost:8000/api/v1/titles?sort_by=-imdb_score&page=1";
-        var movies = await fetchUrl(url_best_movie);
-        console.log(movies.results);
+        var movies = fetchUrl(url_best_movie);
+        movies.then((a) => {
+            console.log(a.results);
+        });
 
     };
 
