@@ -1,119 +1,141 @@
-    html {
-        background-color: black;
-        width: 90%;
-        padding: 0 20px 20px 20px;
-        color: white;
-        margin: 20px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding-bottom: 40px;
-    }
-    
-    h1.modal_content {
-        font-size: 18px;
-    }
-    
-    h2.modal_content {
-        font-size: 16px;
-    }
-    
-    p.modal_content {
-        font-size: 14px;
-        color: rgb(165, 165, 165);
-    }
-    
-    .container_best_movie {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .best_movie_desc {
-        width: 25%;
-    }
-    
-    .best_movie_button {
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        margin: 2px 2px;
-    }
-    
-    .best_movie_button:hover {
-        box-shadow: 4px 6px 10px 2px rgba(255, 255, 255, 0.25);
-    }
-    
-    .best_movie_img {
-        width: 25%;
-    }
-    
-    .modal {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 50%;
-        padding: 10px 10px 10px 10px;
-        transform: translate(-50%, -50%);
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-    
-    .modal_content {
-        width: 100%;
-        cursor: zoom-out;
-    }
-    
-    .modal_cover {
-        position: relative;
-        float: right;
-    }
-    
-    .close {
-        font-size: 28px;
-        font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-        color: rgb(255, 0, 0);
-        text-decoration: none;
-        cursor: zoom-out;
-    }
-    
-    button.best_movie_desc:hover {
-        text-decoration: none;
-        cursor: zoom-in;
-    }
-    
-    .top_rated {
-        padding-bottom: 20px;
-    }
-    
-    .cat1 {
-        padding-bottom: 20px;
-    }
-    
-    .cat2 {
-        padding-bottom: 20px;
-    }
-    
-    .cat3 {
-        padding-bottom: 20px;
-    }
-    
-    .footer {
-        text-align: center;
-        padding-top: 20px;
-    }
+html {
+    background-color: black;
+    width: 90%;
+    padding: 0 20px 20px 20px;
+    color: white;
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+h2.modal_content {
+    font-size: 18px;
+}
+
+h3.modal_content {
+    font-size: 16px;
+}
+
+p.modal_content {
+    font-size: 14px;
+    color: rgb(165, 165, 165);
+}
+
+.container_best_movie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.best_movie_desc {
+    width: 25%;
+}
+
+.best_movie_button {
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+}
+
+.best_movie_button:hover {
+    box-shadow: 4px 6px 10px 2px rgba(255, 255, 255, 0.25);
+}
+
+.best_movie_img {
+    width: 25%;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    overflow-y: auto;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    padding: 10px 10px 10px 10px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    scrollbar-width: thin;
+    scrollbar-color: grey lightgrey;
+}
+
+.modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: grey;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+}
+
+.modal_content {
+    width: 100%;
+    cursor: zoom-out;
+}
+
+.modal_cover {
+    position: relative;
+    cursor: zoom-out;
+    float: right;
+}
+
+.close {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: zoom-out;
+}
+
+button.best_movie_desc:hover {
+    text-decoration: none;
+    cursor: zoom-in;
+}
+
+.container_top_rated {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.cat1 {
+    padding-bottom: 20px;
+}
+
+.cat2 {
+    padding-bottom: 20px;
+}
+
+.cat3 {
+    padding-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 20px;
+}
