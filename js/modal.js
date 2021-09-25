@@ -67,7 +67,6 @@ export default class createModal {
         let modal_description = document.getElementById("modal_description");
 
         modal_cover_img.src = this.movie.image_url;
-        modal_cover_img.alt = "Affiche du film";
 
         modal_title.innerHTML = this.movie.title;
         modal_genre_title.innerHTML = "Genre : ";
