@@ -121,6 +121,22 @@ p.modal_content {
     padding-bottom: 20px;
 }
 
+.top_rated_carousel1,
+.top_rated_carousel2,
+.top_rated_carousel3,
+.top_rated_carousel4 {
+    margin: 2%;
+    cursor: zoom-in;
+}
+
+.top_rated_title {
+    display: flex;
+    font-size: 18px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 .cat1 {
     padding-bottom: 20px;
 }
