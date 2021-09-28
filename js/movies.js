@@ -7,24 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function apiPagination(number_of_movies) {
         let pages_number = 1;
         if (number_of_movies < 5) {
-            console.log("apiPagination number of pages: ");
-            console.log(pages_number);
             return pages_number;
         };
         while (number_of_movies > 4) {
             pages_number++;
             number_of_movies = number_of_movies - 4;
         }
-        console.log("apiPagination number of pages: ");
-        console.log(pages_number);
         return pages_number;
     };
 
     async function fetchMovies(url, number_of_movies = 1) {
         let movie_url;
         let pages_number = apiPagination(number_of_movies);
-        console.log("fetchMovie number of pages: ");
-        console.log(pages_number);
         var movie = [];
         var movies;
         if (number_of_movies < 5) {
@@ -32,22 +26,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then((data) => data.json())
                 .then((data) => {
                     for (var i = 0; i < number_of_movies; i++) {
-                        console.log("fetchMovies loop number: " + i);
-                        console.log(data);
                         movie_url = data.results[i].url;
                         movie.push(fetch(movie_url)
                             .then((data) => data.json())
                             .then(movie => {
-                                console.log("fetchMovies loop movie: " + i);
-                                console.log(movie);
                                 return movie;
                             }));
                     };
-                });
+                })
+                .catch((error) => { console.log(error); });
+        } else {
+            while (pages_number != 0) {
+                movies = await fetch(url)
+                    .then((data) => data.json())
+                    .then((data) => {
+                        url = data.next;
+                        for (var i = 0; i < 5; i++) {
+                            movie_url = data.results[i].url;
+                            movie.push(fetch(movie_url)
+                                .then((data) => data.json())
+                                .then(movie => {
+                                    return movie;
+                                }));
+                        };
+                    })
+                    .catch((error) => { console.log(error); });
+                pages_number = pages_number - 1;
+            };
         };
         await movies;
-        console.log("fetchMovies movie: ");
-        console.log(movie);
         return movie;
     };
 
@@ -79,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let img_carousel2 = document.getElementById("img_carousel2");
         let img_carousel3 = document.getElementById("img_carousel3");
         let img_carousel4 = document.getElementById("img_carousel4");
-        let toprated_movies = fetchMovies("http://localhost:8000/api/v1/titles?sort_by=-imdb_score&page=1", 4)
+        let toprated_movies = fetchMovies("http://localhost:8000/api/v1/titles?sort_by=-imdb_score&page=1", 7)
             .then((movies) => {
                 Promise.all(movies).then(movie => {
                     img_carousel1.src = movie[1].image_url;
@@ -97,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     img_carousel3.src = movie[3].image_url;
                     img_carousel3.onclick = () => {
                         let tr_modal = new Modal(movie[3]);
+                        tr_modal.modal;
+                        modal.style.display = "block";
+                    };
+                    img_carousel4.src = movie[4].image_url;
+                    img_carousel4.onclick = () => {
+                        let tr_modal = new Modal(movie[4]);
                         tr_modal.modal;
                         modal.style.display = "block";
                     };
