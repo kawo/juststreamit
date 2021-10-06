@@ -77,28 +77,28 @@ html {
     -webkit-animation-name: modanime;
     -webkit-animation-duration: 0.3s;
     animation-name: modanime;
-    animation-duration: 0.3s
+    animation-duration: 0.3s;
 }
 
 @-webkit-keyframes modanime {
     from {
         top: -800px;
-        opacity: 0
+        opacity: 0;
     }
     to {
         top: 50%;
-        opacity: 1
+        opacity: 1;
     }
 }
 
 @keyframes modanime {
     from {
         top: -800px;
-        opacity: 0
+        opacity: 0;
     }
     to {
         top: 50%;
-        opacity: 1
+        opacity: 1;
     }
 }
 
