@@ -2,11 +2,11 @@ export default class createModal {
 
     constructor(movie) {
         this.movie = movie;
-    }
+    };
 
     get modal() {
         return this.buildModal();
-    }
+    };
 
     parseList(list) {
         let result = "";
@@ -18,31 +18,34 @@ export default class createModal {
                     result += list[item] + ".";
                 } else {
                     result += list[item] + ", ";
-                }
-            }
-        }
+                };
+            };
+        };
         return result;
-    }
+    };
 
-    checkItem(item) {
+    checkIncome(item) {
         if (item == null) {
             return "Aucun résultat";
-        }
-    }
+        } else {
+            item = "$" + parseFloat(item).toLocaleString('en');
+            return item;
+        };
+    };
 
     delModal(items) {
         for (var i = 0; i < items.length; i++) {
             var item = items[i];
             item.innerHTML = "";
-        }
-    }
+        };
+    };
 
     buildModal() {
 
         let modal_content = document.getElementById("modal_content");
-        let modal_cover = document.getElementById("modal_cover");
+        let modal_cover = document.getElementById("cover");
 
-        let modal_cover_img = document.getElementById("modal_cover_img");
+        let modal_cover_img = document.getElementById("cover_img");
         let modal_close = document.getElementById("close");
         let modal_title = document.getElementById("modal_title");
         let modal_genre_title = document.getElementById("modal_genre_title");
@@ -68,7 +71,7 @@ export default class createModal {
 
         modal_cover_img.src = this.movie.image_url;
 
-        modal_title.innerHTML = this.movie.title;
+        modal_title.innerHTML = this.movie.original_title;
         modal_genre_title.innerHTML = "Genre : ";
         modal_genre.innerHTML = this.parseList(this.movie.genres);
         modal_published_title.innerHTML = "Date de sortie : ";
@@ -86,13 +89,13 @@ export default class createModal {
         modal_countries_title.innerHTML = "Pays : ";
         modal_countries.innerHTML = this.parseList(this.movie.countries);
         modal_boxoffice_title.innerHTML = "Box office : ";
-        modal_boxoffice.innerHTML = this.checkItem(this.movie.worldwide_gross_income);
+        modal_boxoffice.innerHTML = this.checkIncome(this.movie.worldwide_gross_income);
         modal_description_title.innerHTML = "Résumé : ";
         modal_description.innerHTML = this.movie.long_description;
 
         modal_close.onclick = () => {
             modal.style.display = "none";
-            modal_cover_img.src = "";
+            modal_cover_img.src = "img/background_1px.png";
             const content_nodes = modal_content.querySelectorAll('[id^="modal_"]');
             this.delModal(content_nodes);
 
@@ -100,14 +103,14 @@ export default class createModal {
 
         modal_content.onclick = () => {
             modal.style.display = "none";
-            modal_cover_img.src = "";
+            modal_cover_img.src = "img/background_1px.png";
             const content_nodes = modal_content.querySelectorAll('[id^="modal_"]');
             this.delModal(content_nodes);
         };
 
         modal_cover.onclick = () => {
             modal.style.display = "none";
-            modal_cover_img.src = "";
+            modal_cover_img.src = "img/background_1px.png";
             const content_nodes = modal_content.querySelectorAll('[id^="modal_"]');
             this.delModal(content_nodes);
         };
