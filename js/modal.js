@@ -11,13 +11,13 @@ export default class createModal {
     parseList(list) {
         let result = "";
         if (list.length == 1) {
-            result = list[0];
+            result = list[ 0 ];
         } else {
             for (const item in list) {
                 if (item == list.length - 1) {
-                    result += list[item] + ".";
+                    result += list[ item ] + ".";
                 } else {
-                    result += list[item] + ", ";
+                    result += list[ item ] + ", ";
                 };
             };
         };
@@ -35,7 +35,7 @@ export default class createModal {
 
     delModal(items) {
         for (var i = 0; i < items.length; i++) {
-            var item = items[i];
+            var item = items[ i ];
             item.innerHTML = "";
         };
     };

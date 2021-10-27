@@ -1,100 +1,167 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JustStreamIt</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <script type="module" src="js/movies.js"></script>
-</head>
+        <head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>JustStreamIt</title>
+                <link rel="stylesheet" href="css/main.css" />
+                <script type="module" src="js/movies.js"></script>
+                <script src="js/carousel.js"></script>
+        </head>
 
-<body>
-    <div class="header">
-        <a href="/index.html"><img src="/img/juststreamit_logo.png" alt="Logo JustSteamIt" /></a>
-    </div>
-    <div class="modal" id="modal">
-        <div id="modal_content">
-            <div class="cover" id="cover"><img src="img/background_1px.png" alt="Affiche du film" id="cover_img">
-            </div>
-            <span id="close" class="close">&times;</span>
-            <h2 id="modal_title"></h2>
-            <h3 id="modal_genre_title"></h3>
-            <p id="modal_genre"></p>
-            <h3 id="modal_published_title"></h3>
-            <p id="modal_published"></p>
-            <h3 id="modal_rated_title"></h3>
-            <p id="modal_rated"></p>
-            <h3 id="modal_score_title"></h3>
-            <p id="modal_score"></p>
-            <h3 id="modal_real_title"></h3>
-            <p id="modal_real"></p>
-            <h3 id="modal_actors_title"></h3>
-            <p id="modal_actors"></p>
-            <h3 id="modal_duration_title"></h3>
-            <p id="modal_duration"></p>
-            <h3 id="modal_countries_title"></h3>
-            <p id="modal_countries"></p>
-            <h3 id="modal_boxoffice_title"></h3>
-            <p id="modal_boxoffice"></p>
-            <h3 id="modal_description_title"></h3>
-            <p id="modal_description"></p>
-        </div>
-    </div>
-    <div class="container_bestmovie">
-        <div class="bestmovie_content" id="bm_content">
-            <h2 id="bm_title" class="bm_content"></h2>
-            <p id="bm_desc" class="bm_content"></p>
-            <button class="bm_button" id="bm_button">Détails</button>
-        </div>
-        <div class="bestmovie_cover" id="bm_cover"><img src="img/background_1px.png" alt="Affiche du film" id="bm_img"></div>
-    </div>
-    <div class="top_rated_title">Films US les mieux notés</div>
-    <div class="container_top_rated">
-        <div class="top_rated_carousel1" id="tr_carousel1"><img src="img/background_1px.png" alt="Affiche du film" id="img_carousel1">
-        </div>
-        <div class="top_rated_carousel2" id="tr_carousel2"><img src="img/background_1px.png" alt="Affiche du film" id="img_carousel2">
-        </div>
-        <div class="top_rated_carousel3" id="tr_carousel3"><img src="img/background_1px.png" alt="Affiche du film" id="img_carousel3">
-        </div>
-        <div class="top_rated_carousel4" id="tr_carousel4"><img src="img/background_1px.png" alt="Affiche du film" id="img_carousel4">
-        </div>
-    </div>
-    <div class="top_horror_title">Films d'horreur US les mieux notés</div>
-    <div class="container_top_horror">
-        <div class="top_rated_carousel1" id="tophorror_carousel1"><img src="img/background_1px.png" alt="Affiche du film" id="img_horror1">
-        </div>
-        <div class="top_rated_carousel2" id="tophorror_carousel2"><img src="img/background_1px.png" alt="Affiche du film" id="img_horror2">
-        </div>
-        <div class="top_rated_carousel3" id="tophorror_carousel3"><img src="img/background_1px.png" alt="Affiche du film" id="img_horror3">
-        </div>
-        <div class="top_rated_carousel4" id="tophorror_carousel4"><img src="img/background_1px.png" alt="Affiche du film" id="img_horror4">
-        </div>
-    </div>
-    <div class="top_scifi_title">Films de science-fiction US les mieux notés</div>
-    <div class="container_top_scifi">
-        <div class="top_rated_carousel1" id="topscifi_carousel1"><img src="img/background_1px.png" alt="Affiche du film" id="img_scifi1">
-        </div>
-        <div class="top_rated_carousel2" id="topscifi_carousel2"><img src="img/background_1px.png" alt="Affiche du film" id="img_scifi2">
-        </div>
-        <div class="top_rated_carousel3" id="topscifi_carousel3"><img src="img/background_1px.png" alt="Affiche du film" id="img_scifi3">
-        </div>
-        <div class="top_rated_carousel4" id="topscifi_carousel4"><img src="img/background_1px.png" alt="Affiche du film" id="img_scifi4">
-        </div>
-    </div>
-    <div class="top_animation_title">Films d'animation US les mieux notés</div>
-    <div class="container_top_animation">
-        <div class="top_rated_carousel1" id="topanimation_carousel1"><img src="img/background_1px.png" alt="Affiche du film" id="img_animation1">
-        </div>
-        <div class="top_rated_carousel2" id="topanimation_carousel2"><img src="img/background_1px.png" alt="Affiche du film" id="img_animation2">
-        </div>
-        <div class="top_rated_carousel3" id="topanimation_carousel3"><img src="img/background_1px.png" alt="Affiche du film" id="img_animation3">
-        </div>
-        <div class="top_rated_carousel4" id="topanimation_carousel4"><img src="img/background_1px.png" alt="Affiche du film" id="img_animation4">
-        </div>
-    </div>
-    <div class="footer">&copy; 2021 JustSteamIt by Kevin Audebrand</div>
-</body>
+        <body>
+                <div class="header">
+                        <a href="/index.html"><img src="/img/juststreamit_logo.png" alt="Logo JustSteamIt" /></a>
+                </div>
+                <div class="modal" id="modal">
+                        <div id="modal_content">
+                                <div class="cover" id="cover"><img src="img/background_1px.png" alt="Affiche du film"
+                                                id="cover_img">
+                                </div>
+                                <span id="close" class="close">&times;</span>
+                                <h2 id="modal_title"></h2>
+                                <h3 id="modal_genre_title"></h3>
+                                <p id="modal_genre"></p>
+                                <h3 id="modal_published_title"></h3>
+                                <p id="modal_published"></p>
+                                <h3 id="modal_rated_title"></h3>
+                                <p id="modal_rated"></p>
+                                <h3 id="modal_score_title"></h3>
+                                <p id="modal_score"></p>
+                                <h3 id="modal_real_title"></h3>
+                                <p id="modal_real"></p>
+                                <h3 id="modal_actors_title"></h3>
+                                <p id="modal_actors"></p>
+                                <h3 id="modal_duration_title"></h3>
+                                <p id="modal_duration"></p>
+                                <h3 id="modal_countries_title"></h3>
+                                <p id="modal_countries"></p>
+                                <h3 id="modal_boxoffice_title"></h3>
+                                <p id="modal_boxoffice"></p>
+                                <h3 id="modal_description_title"></h3>
+                                <p id="modal_description"></p>
+                        </div>
+                </div>
+                <div class="container_bestmovie">
+                        <div class="bestmovie_content" id="bm_content">
+                                <h2 id="bm_title" class="bm_content"></h2>
+                                <p id="bm_desc" class="bm_content"></p>
+                                <button class="bm_button" id="bm_button">Détails</button>
+                        </div>
+                        <div class="bestmovie_cover" id="bm_cover"><img src="img/background_1px.png"
+                                        alt="Affiche du film" id="bm_img"></div>
+                </div>
+                <div class="top_rated_title">Films US les mieux notés</div>
+
+                <div class="container_top_rated">
+                        <span class="slide_button_next" id="top_rated_next">&gt;</span><span class="slide_button_prev"
+                                id="top_rated_prev">&lt;</span>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated1">
+                        </div>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated2">
+                        </div>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated3">
+                        </div>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated4">
+                        </div>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated5">
+                        </div>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated6">
+                        </div>
+                        <div class="top_rated_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_rated7">
+                        </div>
+
+                </div>
+                <div class="top_horror_title">Films d'horreur US les mieux notés</div>
+
+                <div class="container_top_horror">
+                        <span class="slide_button_next" id="top_horror_next">&gt;</span><span class="slide_button_prev"
+                                id="top_horror_prev">&lt;</span>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror1">
+                        </div>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror2">
+                        </div>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror3">
+                        </div>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror4">
+                        </div>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror5">
+                        </div>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror6">
+                        </div>
+                        <div class="top_horror_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_horror7">
+                        </div>
+
+                </div>
+                <div class="top_scifi_title">Films de science-fiction US les mieux notés</div>
+                <div class="container_top_scifi">
+                        <span class="slide_button_next" id="top_scifi_next">&gt;</span><span class="slide_button_prev"
+                                id="top_scifi_prev">&lt;</span>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi1">
+                        </div>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi2">
+                        </div>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi3">
+                        </div>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi4">
+                        </div>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi5">
+                        </div>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi6">
+                        </div>
+                        <div class="top_scifi_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_scifi7">
+                        </div>
+                </div>
+                <div class="top_animation_title">Films d'animation US les mieux notés</div>
+                <div class="container_top_animation">
+                        <span class="slide_button_next" id="top_animation_next">&gt;</span><span
+                                class="slide_button_prev" id="top_animation_prev">&lt;</span>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation1">
+                        </div>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation2">
+                        </div>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation3">
+                        </div>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation4">
+                        </div>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation5">
+                        </div>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation6">
+                        </div>
+                        <div class="top_animation_carousel"><img src="img/background_1px.png" alt="Affiche du film"
+                                        class="img_carousel" id="img_top_animation7">
+                        </div>
+                </div>
+                <div class="footer">&copy; 2021 JustSteamIt by Kevin Audebrand</div>
+        </body>
 
 </html>
